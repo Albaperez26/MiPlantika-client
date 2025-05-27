@@ -1,7 +1,10 @@
+import logo from "../src/assets/logo.png";
+import "./NavBar.css";
 function NavBar() {
   return (
     <nav className="nav-bar">
-      {/*Insertar imagen del logo y el título de la página*/}
+      <img className="img-logo" src={logo}></img>
+      <h1 className="titulo-navbar">MiPlantika</h1>
     </nav>
   );
 }
