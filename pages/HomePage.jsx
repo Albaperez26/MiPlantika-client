@@ -5,7 +5,8 @@ function HomePage() {
   const [species, setSpecies] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5005/species")
+    //poner axios.get en vez de fetch
+    fetch("http://localhost:5005/species") //poner el import mediavite!
       .then((response) => response.json())
       .then((species) => {
         setSpecies(species);
