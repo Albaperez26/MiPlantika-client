@@ -19,12 +19,11 @@ function HomePage() {
       <h1>Home page</h1>
       <img className="img-principal" src={imgPrincipal}></img>
       {species.map((specie) => (
-        <Link to={`/species/${specie.id}`}>
+        <Link to={`/species/${specie.id}`} key={specie.id}>
           <div className="specie-card">
-            <div className="specie" key={specie.id}>
-              {specie.nombre}
-            </div>
-            <div className="specie" key={specie.id}>
+            <h2 className="specie">{specie.nombre}</h2>
+            <img className="image-specie" src={specie.imagen}></img>
+            <div className="specie">
               Número total de especies: {specie.numeroDeEspecies}
             </div>
           </div>
