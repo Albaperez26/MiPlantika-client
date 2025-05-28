@@ -12,9 +12,10 @@ function SpeciesDetails() {
   const getData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5005/species/${params.speciesId}`
+        `http://localhost:5005/species/${params.speciesId}?_embed=plants`
       );
       setDetails(response.data);
+      console.log(response.data);
     } catch (error) {
       console.log(error); //poner una página de error
     }
