@@ -7,6 +7,7 @@ import "./App.css";
 import SpeciesDetails from "../pages/SpeciesDetails";
 import PlantsDetails from "../pages/PlantsDetails";
 import CreatePlants from "../pages/CreatePlants";
+import EditPlants from "../pages/EditPlants";
 
 function App() {
   return (
@@ -18,7 +19,11 @@ function App() {
         <Route path="/species" element={<PlantsFamily />} />
         <Route path="/species/:speciesId" element={<SpeciesDetails />} />
         <Route path="plants/:plantsId" element={<PlantsDetails />} />
-        <Route exact path="/plants/create" element={<CreatePlants />} />
+        <Route
+          path="/species/:speciesId/create-plant"
+          element={<CreatePlants />}
+        />
+        <Route path="/plants/:plantsId/edit" element={<EditPlants />} />
       </Routes>
 
       <Footer />

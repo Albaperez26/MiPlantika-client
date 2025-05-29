@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import "./SpeciesDetails.css";
+
 function SpeciesDetails() {
   const params = useParams();
   const [details, setDetails] = useState(null);
@@ -34,9 +35,10 @@ function SpeciesDetails() {
         <p> Número de especies: {details.numeroDeEspecies}</p>
         <p>Géneros: {details.generos}</p>
       </div>
+      {/*Crear una planta nueva :) */}
       <div className="card-plants">
-        <Link to="/plants/create">Añade tu planta</Link>{" "}
-        {/*PREGUNTAR A JORGE COMO HACER PARA AÑADIR LA PLANTA :) */}
+        <Link to={`/species/${details.id}/create-plant`}>Añade tu planta</Link>
+
         {details.plants.map((plant) => (
           <Link to={`/plants/${plant.id}`} key={plant.id}>
             <div className="card-plants">

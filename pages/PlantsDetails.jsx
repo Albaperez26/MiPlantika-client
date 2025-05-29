@@ -43,6 +43,10 @@ function PlantsDetails() {
       <p className="text-plants">
         Comentarios de otros usuarios: "{plantDetails.comentarios}"
       </p>
+
+      <Link to={`/plants/${params.plantsId}/edit`}>
+        <button>Edita esta planta</button>
+      </Link>
     </div>
   );
 }
