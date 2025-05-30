@@ -33,19 +33,21 @@ function HomePage() {
         />
       </div>
 
-      {species.map((specie) => (
-        <div className="home-page-card">
-          <Link to={`/species/${specie.id}`} key={specie.id}>
-            <div className="specie-card">
-              <h2 className="specie">{specie.nombre}</h2>
-              <img className="image-specie" src={specie.imagen}></img>
-              <div className="specie">
-                Número total de especies: {specie.numeroDeEspecies}
+      <div className="species-container">
+        {species.map((specie) => (
+          <div className="home-page-card">
+            <Link to={`/species/${specie.id}`} key={specie.id}>
+              <div className="specie-card">
+                <h2 className="specie">{specie.nombre}</h2>
+                <img className="image-specie" src={specie.imagen}></img>
+                <div className="specie">
+                  Número total de especies: {specie.numeroDeEspecies}
+                </div>
               </div>
-            </div>
-          </Link>
-        </div>
-      ))}
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

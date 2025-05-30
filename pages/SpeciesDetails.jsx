@@ -30,23 +30,25 @@ function SpeciesDetails() {
   return (
     <div>
       <div className="species-details">
-        <h1>{details.nombre}</h1>
-        <img className="species-image" src={details.imagen}></img>
-        <p>
-          {" "}
-          <strong>Descripción: </strong>
-          {details.descripcion}
-        </p>
-        <p>
-          {" "}
-          <strong>Número de especies: </strong>
-          {details.numeroDeEspecies}
-        </p>
-        <p>
-          {" "}
-          <strong>Géneros: </strong>
-          {details.generos}
-        </p>
+        <div className="species-details-container">
+          <h1>{details.nombre}</h1>
+          <img className="species-image" src={details.imagen}></img>
+          <p>
+            {" "}
+            <strong>Descripción: </strong>
+            {details.descripcion}
+          </p>
+          <p>
+            {" "}
+            <strong>Número de especies: </strong>
+            {details.numeroDeEspecies}
+          </p>
+          <p>
+            {" "}
+            <strong>Géneros: </strong>
+            {details.generos}
+          </p>
+        </div>
       </div>
 
       {/*Crear una planta nueva :) */}
