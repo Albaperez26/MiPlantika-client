@@ -73,7 +73,7 @@ function EditPlants() {
   //termina boton de borrar
   return (
     <div className="edit-plants">
-      <h3>Edita esta planta</h3>
+      <h3>🪴Edita esta planta: 🪴</h3>
 
       <div className="edit-form">
         <form onSubmit={handleFormSubmit}>
