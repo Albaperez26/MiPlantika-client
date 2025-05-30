@@ -53,6 +53,7 @@ function EditPlants() {
       navigate(`/species/${speciesId}`);
     } catch (error) {
       console.log(error);
+      navigate("/error");
     }
   };
 
@@ -66,6 +67,7 @@ function EditPlants() {
       })
       .catch((error) => {
         console.log(error);
+        navigate("/error");
       });
   };
   //termina boton de borrar
@@ -156,7 +158,7 @@ function EditPlants() {
           </button>
         </form>
       </div>
-      <button className="button" onClick={deletePlant}>
+      <button className="button-delete" onClick={deletePlant}>
         Eliminar planta
       </button>
     </div>

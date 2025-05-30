@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import "./SpeciesDetails.css";
+import { useNavigate } from "react-router-dom";
 
 function SpeciesDetails() {
   const params = useParams();
   const [details, setDetails] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getData();
@@ -21,7 +23,9 @@ function SpeciesDetails() {
       setDetails(response.data);
       console.log(response.data);
     } catch (error) {
-      console.log(error); //poner una página de error
+      console.log(error);
+      navigate("/error");
+      //poner una página de error
     }
   };
 

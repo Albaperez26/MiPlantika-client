@@ -32,6 +32,7 @@ function CreatePlants() {
       navigate(`/species/${speciesId}`);
     } catch (error) {
       console.error("Error al crear planta:", error);
+      navigate("/error");
     }
   };
 

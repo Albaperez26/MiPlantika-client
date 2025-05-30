@@ -8,6 +8,7 @@ import PlantsDetails from "../pages/PlantsDetails";
 import CreatePlants from "../pages/CreatePlants";
 import EditPlants from "../pages/EditPlants";
 import AboutUs from "../components/AboutUs";
+import ErrorPage from "../pages/ErrorPage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         />
         <Route path="/plants/:plantsId/edit" element={<EditPlants />} />
         <Route path="/aboutUs" element={<AboutUs />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
 
       <Footer />

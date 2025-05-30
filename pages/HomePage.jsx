@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 import imgPrincipal from "../src/assets/img-principal.jpg";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 function HomePage() {
+  const navigate = useNavigate();
   const [species, setSpecies] = useState([]);
   const [specieName, setSpecieName] = useState("");
 
@@ -13,6 +15,10 @@ function HomePage() {
       .get(`${import.meta.env.VITE_SERVER_URL}/species?q=${specieName}`) //poner el import mediavite!
       .then((response) => {
         setSpecies(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        navigate("/error");
       });
   }, [specieName]);
 
