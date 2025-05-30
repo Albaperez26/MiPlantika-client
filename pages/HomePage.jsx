@@ -2,16 +2,17 @@ import { useEffect, useState } from "react";
 import "./HomePage.css";
 import imgPrincipal from "../src/assets/img-principal.jpg";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function HomePage() {
   const [species, setSpecies] = useState([]);
   const [specieName, setSpecieName] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:5005/species?q=${specieName}`) //poner el import mediavite!
-      .then((response) => response.json())
-      .then((species) => {
-        setSpecies(species);
+    axios
+      .get(`${import.meta.env.VITE_SERVER_URL}/species?q=${specieName}`) //poner el import mediavite!
+      .then((response) => {
+        setSpecies(response.data);
       });
   }, [specieName]);
 

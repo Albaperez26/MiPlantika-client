@@ -14,7 +14,9 @@ function SpeciesDetails() {
   const getData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5005/species/${params.speciesId}?_embed=plants`
+        `${import.meta.env.VITE_SERVER_URL}/species/${
+          params.speciesId
+        }?_embed=plants`
       );
       setDetails(response.data);
       console.log(response.data);
