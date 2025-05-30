@@ -1,8 +1,11 @@
 import "./Footer.css";
+import imagen from "../src/assets/miplantika.png";
 function Footer() {
   return (
     <footer className="footer">
-      <h2>Aqui va el footer</h2>
+      <img className="imagen" src={imagen} />
+      <p>"Cuidar una planta es cuidar la vida." 🌱</p>
+      <p>&copy; 2025 MiPlantika. Todos los derechos reservados.</p>
     </footer>
   );
 }

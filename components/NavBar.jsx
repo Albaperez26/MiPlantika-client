@@ -4,10 +4,19 @@ import "./NavBar.css";
 function NavBar() {
   return (
     <nav className="nav-bar">
-      <img className="img-logo" src={logo}></img>
-      <Link to="/">
+      <div className="titulo">
+        <img className="img-logo" src={logo}></img>
         <h1 className="titulo-navbar">MiPlantika</h1>
-      </Link>
+      </div>
+      <div className="nav-elements">
+        <Link to="/" className="link-nav">
+          <h4 className="nav-elements">Home</h4>
+        </Link>
+
+        <Link to="/aboutUs" className="link-nav">
+          <h4 className="nav-elements">About us</h4>
+        </Link>
+      </div>
     </nav>
   );
 }

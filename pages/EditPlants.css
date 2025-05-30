@@ -1,0 +1,25 @@
+.button {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.edit-plants {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    border-radius: 5px;
+    text-align: center;
+    gap: 25px;
+    
+}

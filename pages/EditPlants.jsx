@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-
+import "./EditPlants.css";
 function EditPlants() {
   const navigate = useNavigate();
   const { plantsId } = useParams();
@@ -73,65 +73,92 @@ function EditPlants() {
     <div className="edit-plants">
       <h3>Edita esta planta</h3>
 
-      <form onSubmit={handleFormSubmit}>
-        <label>Nombre:</label>
-        <input
-          type="text"
-          value={nombre}
-          onChange={(e) => setNombre(e.target.value)}
-          required
-        />
+      <div className="edit-form">
+        <form onSubmit={handleFormSubmit}>
+          <label className="edit-form">
+            {" "}
+            <strong>Nombre:</strong>
+          </label>
+          <input
+            className="edit-form"
+            type="text"
+            value={nombre}
+            onChange={(e) => setNombre(e.target.value)}
+            required
+          />
 
-        <label>Color:</label>
-        <input
-          type="text"
-          value={color}
-          onChange={(e) => setColor(e.target.value)}
-          required
-        />
+          <label className="edit-form">
+            <strong>Color:</strong>
+          </label>
+          <input
+            className="edit-form"
+            type="text"
+            value={color}
+            onChange={(e) => setColor(e.target.value)}
+            required
+          />
 
-        <label>Origen:</label>
-        <input
-          type="text"
-          value={origen}
-          onChange={(e) => setOrigen(e.target.value)}
-        />
+          <label className="edit-form">
+            <strong>Origen:</strong>
+          </label>
+          <input
+            className="edit-form"
+            type="text"
+            value={origen}
+            onChange={(e) => setOrigen(e.target.value)}
+          />
 
-        <label>Comentario:</label>
-        <input
-          type="text"
-          value={comentarios}
-          onChange={(e) => setComentarios(e.target.value)}
-        />
+          <label className="edit-form">
+            <strong>Comentario:</strong>
+          </label>
+          <input
+            className="edit-form"
+            type="text"
+            value={comentarios}
+            onChange={(e) => setComentarios(e.target.value)}
+          />
 
-        <label>Características:</label>
-        <textarea
-          value={caracteristicas}
-          onChange={(e) => setCaracteristicas(e.target.value)}
-        />
+          <label className="edit-form">
+            <strong>Características:</strong>
+          </label>
+          <textarea
+            className="edit-form"
+            value={caracteristicas}
+            onChange={(e) => setCaracteristicas(e.target.value)}
+          />
 
-        <label>Foto (URL): </label>
-        <input
-          type="url"
-          name="imagen"
-          placeholder="https://example.com/foto.jpg"
-          value={imagen}
-          onChange={(e) => setImagen(e.target.value)}
-          required
-        />
-        {/*Añadimos vista previa en la página tanto de editar como de crear, asi queda mejor */}
-        {imagen && (
-          <div style={{ margin: "10px 0" }}>
-            <img
-              src={imagen}
-              alt="Vista previa"
-              style={{ width: "200px", borderRadius: "8px" }}
-            />
-          </div>
-        )}
-        <button type="submit">Editar</button>
-      </form>
-      <button onClick={deletePlant}>Eliminar planta</button>
+          <label className="edit-form">
+            <strong>Foto (URL): </strong>
+          </label>
+          <input
+            className="edit-form"
+            type="url"
+            name="imagen"
+            placeholder="https://example.com/foto.jpg"
+            value={imagen}
+            onChange={(e) => setImagen(e.target.value)}
+            required
+          />
+          {/*Añadimos vista previa en la página tanto de editar como de crear, asi queda mejor */}
+          <p>Vista previa de la imagen</p>
+          {imagen && (
+            <div style={{ margin: "10px 0" }}>
+              <img
+                src={imagen}
+                alt="Vista previa"
+                style={{ width: "200px", borderRadius: "8px" }}
+              />
+            </div>
+          )}
+
+          <button className="button" type="submit">
+            Editar
+          </button>
+        </form>
+      </div>
+      <button className="button" onClick={deletePlant}>
+        Eliminar planta
+      </button>
     </div>
   );
 }

@@ -21,23 +21,30 @@ function HomePage() {
 
   return (
     <div className="home-page">
-      <h1>Home page</h1>
+      <h1>Mi Plantika</h1>
+      <h3>Explora. Comparte. Cultiva.</h3>
       <img className="img-principal" src={imgPrincipal}></img>
-      <input
-        type="text"
-        placeholder="Buscar especie..."
-        onChange={handleSpecieName}
-      />
+      <div className="buscador-home-page">
+        <input
+          className="buscador-style"
+          type="text"
+          placeholder="Buscar familia..."
+          onChange={handleSpecieName}
+        />
+      </div>
+
       {species.map((specie) => (
-        <Link to={`/species/${specie.id}`} key={specie.id}>
-          <div className="specie-card">
-            <h2 className="specie">{specie.nombre}</h2>
-            <img className="image-specie" src={specie.imagen}></img>
-            <div className="specie">
-              Número total de especies: {specie.numeroDeEspecies}
+        <div className="home-page-card">
+          <Link to={`/species/${specie.id}`} key={specie.id}>
+            <div className="specie-card">
+              <h2 className="specie">{specie.nombre}</h2>
+              <img className="image-specie" src={specie.imagen}></img>
+              <div className="specie">
+                Número total de especies: {specie.numeroDeEspecies}
+              </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
       ))}
     </div>
   );

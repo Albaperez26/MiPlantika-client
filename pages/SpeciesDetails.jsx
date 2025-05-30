@@ -32,21 +32,39 @@ function SpeciesDetails() {
       <div className="species-details">
         <h1>{details.nombre}</h1>
         <img className="species-image" src={details.imagen}></img>
-        <p> Número de especies: {details.numeroDeEspecies}</p>
-        <p>Géneros: {details.generos}</p>
+        <p>
+          {" "}
+          <strong>Descripción: </strong>
+          {details.descripcion}
+        </p>
+        <p>
+          {" "}
+          <strong>Número de especies: </strong>
+          {details.numeroDeEspecies}
+        </p>
+        <p>
+          {" "}
+          <strong>Géneros: </strong>
+          {details.generos}
+        </p>
       </div>
-      {/*Crear una planta nueva :) */}
-      <div className="card-plants">
-        <Link to={`/species/${details.id}/create-plant`}>Añade tu planta</Link>
 
-        {details.plants.map((plant) => (
-          <Link to={`/plants/${plant.id}`} key={plant.id}>
-            <div className="card-plants">
-              <img className="plant-image" src={plant.imagen}></img>
-              <h3 className="plant">{plant.nombre}</h3>
-            </div>
-          </Link>
-        ))}
+      {/*Crear una planta nueva :) */}
+
+      <div className="plants-container">
+        <Link to={`/species/${details.id}/create-plant`}>
+          <button className="add-plant">Añade tu planta</button>
+        </Link>
+        <div className="plants-cards">
+          {details.plants.map((plant) => (
+            <Link to={`/plants/${plant.id}`} key={plant.id}>
+              <div className="card-plants">
+                <img className="plant-image" src={plant.imagen}></img>
+                <h3 className="plant">{plant.nombre}</h3>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

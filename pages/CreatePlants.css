@@ -1,0 +1,41 @@
+.create-plant-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    
+    
+}
+
+.create-form-style {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+
+}
+
+.form-camp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    width: 250px;
+    height: 30px;
+}
+
+.guardar-button {
+    margin-top: 25px;
+    border-radius: 5px;
+    width: 250px;
+    height: 30px;
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(26, 73, 81);
+    color: white;
+}

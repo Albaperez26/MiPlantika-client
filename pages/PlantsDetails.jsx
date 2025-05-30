@@ -32,20 +32,24 @@ function PlantsDetails() {
       <h1>{plantDetails.nombre}</h1>
       <img className="plants-img" src={plantDetails.imagen}></img>
       <p className="text-plants">
-        Color de mi planta: {plantDetails.colorDeMiPlanta}
+        <strong>Color de mi planta: </strong>
+        {plantDetails.colorDeMiPlanta}
       </p>
       <p className="text-plants">
-        ¿De donde es su origen? {plantDetails.localizacion}
+        <strong>¿De donde es su origen? </strong>
+        {plantDetails.localizacion}
       </p>
       <p className="text-plants">
-        Características principales: {plantDetails.características}
+        <strong>Características principales: </strong>
+        {plantDetails.características}
       </p>
       <p className="text-plants">
-        Comentarios de otros usuarios: "{plantDetails.comentarios}"
+        <strong>Comentarios de otros usuarios:</strong> "
+        {plantDetails.comentarios}"
       </p>
 
       <Link to={`/plants/${params.plantsId}/edit`}>
-        <button>Edita esta planta</button>
+        <button className="edit-button">Edita esta planta</button>
       </Link>
     </div>
   );

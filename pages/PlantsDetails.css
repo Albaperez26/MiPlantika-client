@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    gap: 10px;
 }
 
 .plants-img{
@@ -13,5 +13,11 @@
 
 .text-plants{
     text-align: center;
-    
+}
+
+.edit-button {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid black;
 }
